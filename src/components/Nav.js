@@ -11,7 +11,7 @@ const Nav = () => {
             <Button variant="info" className='navbutton'>Logout</Button>
         </div>
         <div className="head">
-          <h2>Mess Administration</h2>
+          <h2>College Administration</h2>
         </div>
     </div>
     
