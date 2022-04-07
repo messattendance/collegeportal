@@ -1,0 +1,97 @@
+.navbar{
+    background-color: #CAB8FF;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbutton{
+    background-color: #c1ffd7;
+}
+
+.align , .menubtn {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none   ;
+    color: white;
+}
+
+.btns{
+    width: 500px;
+}
+
+.decor{
+    background-color: #CAB8FF;
+    padding:5px 15px;
+    border-radius: 5px;
+}
+
+p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px; 
+    color: #000000;
+}
+.menu {
+    width: 900px;
+    height: 300px;
+    background: #FCFFA6;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 51px;
+}
+
+.flexboxes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.innerbox{
+    width: 350px;
+    height: 250px;
+    background: #FCFFA6;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.innerflex{
+    display: flex;
+    padding-top: 35px;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.attendance{
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+    margin: 15px;
+    padding: 15px;
+    flex-direction: row;
+
+}
+
+.head{
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: blue;
+}
+
+.feedback{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:10px;
+}
