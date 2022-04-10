@@ -13,6 +13,11 @@ const Attendance = () => {
     const [count2 , setCount2] = useState('');
     const [count3 , setCount3] = useState('');
     const [todays , setToday] = useState('');
+
+  const [breakfast,setBreakfast] = useState('');
+  const [lunch , setLunch] = useState('');
+  const [dinner , setDinner] = useState('');
+
     const datee = useRef();
     useEffect(() => {
         var today = new Date();
@@ -24,6 +29,9 @@ const Attendance = () => {
         const Dinner  = database.ref(today+' Dinner');
         const Lunch  = database.ref(today+' Lunch');
         const Breakfast  = database.ref(today+' Breakfast');
+        setDinner('/attendancedetails/'+today+' Dinner');
+        setLunch('/attendancedetails/'+today+' Lunch');
+        setBreakfast('/attendancedetails/'+today+' Breakfast');
 
       Breakfast.on('value', (snapshot) => {
         setCount1(snapshot.numChildren());
@@ -45,6 +53,9 @@ const Attendance = () => {
         const Dinner  = database.ref(today+' Dinner');
         const Lunch  = database.ref(today+' Lunch');
         const Breakfast  = database.ref(today+' Breakfast');
+        setDinner('/attendancedetails/'+today+' Dinner');
+        setLunch('/attendancedetails/'+today+' Lunch');
+        setBreakfast('/attendancedetails/'+today+' Breakfast');
 
       Breakfast.on('value', (snapshot) => {
         setCount1(snapshot.numChildren());
@@ -86,7 +97,7 @@ const Attendance = () => {
                         <div className='innerflex'>
                             <h5>Lunch</h5>
                             <p>Attended : { count2 }</p>
-                            <Link to='/attendancedetails'><Button variant='info' className="my-3 py-3">View Details</Button></Link>
+                            <Link to={lunch}><Button variant='info' className="my-3 py-3">View Details</Button></Link>
                         </div>
                     </div>
                     <div className='innerbox'>

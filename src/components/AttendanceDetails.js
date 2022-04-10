@@ -3,21 +3,29 @@ import { Container ,Button , Table} from 'react-bootstrap'
 import '../assets/css/index.css'
 import firebase from 'firebase'
 import Nav from './Nav'
+import { useParams } from 'react-router-dom'
 //import { database  } from '../firebase'
 
 const AttendanceDetails = (props) => {
+    const [getDate , setGetDate] = useState('');
     const [count , setCount] = useState('');
+    const params=useParams();
     const [obj, setObject] = useState('');
+    setGetDate(params.msg);
+    console.log(getDate)
     useEffect(() => {
-      const Lunch = firebase.database().ref('31-03-2022 Lunch');
-      Lunch.on('value' , (snapshot)=>{
-          setCount(snapshot.numChildren());
-          setObject({
-            ...snapshot.val()
-        })
-      })
+        getting()
     }, [])
     
+    function getting(){
+        const Lunch = firebase.database().ref(getDate);
+        Lunch.on('value' , (snapshot)=>{
+            setCount(snapshot.numChildren());
+            setObject({
+              ...snapshot.val()
+          })
+        })
+      }
   return (
     <div>
         <Nav/>
@@ -27,7 +35,7 @@ const AttendanceDetails = (props) => {
                 <div className="attendance">
                     <h5 className='px-3'>Total Count : <span className='decor'>{count}</span></h5>
                     <h5  className='px-3 text-danger'>Breakfast</h5>
-                    <h5 className='px-3'>Date : 02/04/2022</h5>
+                    <h5 className='px-3'>Date : {getDate}</h5>
                 </div>
                 <Table responsive="lg">
                     <thead>

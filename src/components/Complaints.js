@@ -18,6 +18,17 @@ const Complaints = () => {
         );
       });
     }, [count])
+
+    async function handlerevoke(index){
+        await firebase.firestore().collection('complaints').doc(index).update({status:'rejected'}).then(() => console.log('hi'))
+        .catch((err) => {
+            console.error(err);
+        });
+    }
+    async function handleforward(index){
+      
+      await firebase.firestore().collection('complaints').doc(index).update({status:'forwarded to mess'})
+    }
   return (
     <div>
         <Nav/>
@@ -36,16 +47,20 @@ const Complaints = () => {
                             <th>Complaint</th>
                             <th>Image</th>
                             <th>Status</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                    {messages && messages.map((msg =>
+                    {messages && messages.map(((msg , index) =>
                         <tr>
                         <td>01/04/2022</td>
                         <td>{msg.data.idnumber}</td>
                         <td>{msg.data.complaint}</td>
                         <td><Button variant="info">View Image</Button></td>
                         <td className="text-success font-weight-bold">{msg.data.status}</td>
+                        <td>{msg.data.status==='initiated' && <Button variant='danger' onClick={e=>handlerevoke(msg.id)}>Revoke</Button>}</td>
+                        <td>{msg.data.status==='initiated' && <Button variant='primary' onClick={e=>handleforward(msg.id)}>Forward to mess</Button>}</td>
                         </tr>
                        ))}
                     </tbody>
