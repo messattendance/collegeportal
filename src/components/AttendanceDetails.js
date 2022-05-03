@@ -7,25 +7,20 @@ import { useParams } from 'react-router-dom'
 //import { database  } from '../firebase'
 
 const AttendanceDetails = (props) => {
-    const [getDate , setGetDate] = useState('');
     const [count , setCount] = useState('');
     const params=useParams();
     const [obj, setObject] = useState('');
-    setGetDate(params.msg);
-    console.log(getDate)
+
     useEffect(() => {
-        getting()
-    }, [])
-    
-    function getting(){
-        const Lunch = firebase.database().ref(getDate);
+        const Lunch = firebase.database().ref(params.date+" "+params.type);
         Lunch.on('value' , (snapshot)=>{
             setCount(snapshot.numChildren());
             setObject({
               ...snapshot.val()
           })
         })
-      }
+    }, [params])
+    
   return (
     <div>
         <Nav/>
@@ -35,7 +30,7 @@ const AttendanceDetails = (props) => {
                 <div className="attendance">
                     <h5 className='px-3'>Total Count : <span className='decor'>{count}</span></h5>
                     <h5  className='px-3 text-danger'>Breakfast</h5>
-                    <h5 className='px-3'>Date : {getDate}</h5>
+                    <h5 className='px-3'>Date : {params.date+' '+params.type}</h5>
                 </div>
                 <Table responsive="lg">
                     <thead>
@@ -46,7 +41,7 @@ const AttendanceDetails = (props) => {
                     </thead>
                     <tbody>
                         {Object.keys(obj).map(id =>{
-                            return<tr>
+                            return<tr key={id}>
                                 <td>{obj[id].name}</td>
                                 <td>{obj[id].exit_time}</td>
                             </tr>

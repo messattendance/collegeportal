@@ -15,7 +15,7 @@ function App() {
           <Route path='/allmess' exact element={<Allmess/>} />
           <Route path='/feedback' element={<Feedback/>} />
           <Route path='/complaints' element={<Complaints/>} />
-          <Route path='/attendancedetails/:msg' element={<AttendanceDetails/>} />
+          <Route path='/attendancedetails/:date/:type' element={<AttendanceDetails/>} />
         </Routes>
       </Router>
     </div>

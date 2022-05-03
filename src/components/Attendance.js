@@ -24,14 +24,14 @@ const Attendance = () => {
         var dd = String(today.getDate()).padStart(2, '0');
         var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = today.getFullYear();
-        today = mm + '-' + dd + '-' + yyyy;
+        today = dd + '-' + mm + '-' + yyyy;
         setToday(today);
         const Dinner  = database.ref(today+' Dinner');
         const Lunch  = database.ref(today+' Lunch');
         const Breakfast  = database.ref(today+' Breakfast');
-        setDinner('/attendancedetails/'+today+' Dinner');
-        setLunch('/attendancedetails/'+today+' Lunch');
-        setBreakfast('/attendancedetails/'+today+' Breakfast');
+        setDinner('/attendancedetails/'+today+'/Dinner');
+        setLunch('/attendancedetails/'+today+'/Lunch');
+        setBreakfast('/attendancedetails/'+today+'/Breakfast');
 
       Breakfast.on('value', (snapshot) => {
         setCount1(snapshot.numChildren());
@@ -53,9 +53,9 @@ const Attendance = () => {
         const Dinner  = database.ref(today+' Dinner');
         const Lunch  = database.ref(today+' Lunch');
         const Breakfast  = database.ref(today+' Breakfast');
-        setDinner('/attendancedetails/'+today+' Dinner');
-        setLunch('/attendancedetails/'+today+' Lunch');
-        setBreakfast('/attendancedetails/'+today+' Breakfast');
+        setDinner('/attendancedetails/'+today+'/Dinner');
+        setLunch('/attendancedetails/'+today+'/Lunch');
+        setBreakfast('/attendancedetails/'+today+'/Breakfast');
 
       Breakfast.on('value', (snapshot) => {
         setCount1(snapshot.numChildren());
@@ -90,7 +90,7 @@ const Attendance = () => {
                         <div className='innerflex'>
                             <h5>Breakfast</h5>
                             <p>Attended : { count1 }</p>
-                            <Button variant='info' className="my-3 py-3">View Details</Button>
+                            <Link to={breakfast}><Button variant='info' className="my-3 py-3">View Details</Button></Link>
                         </div>
                     </div>
                     <div className='innerbox'>
@@ -104,7 +104,7 @@ const Attendance = () => {
                         <div className='innerflex'>
                             <h5>Dinner</h5>
                             <p>Attended : { count3 }</p>
-                            <Button variant='info' className="my-3 py-3">View Details</Button>
+                            <Link to={dinner}><Button variant='info' className="my-3 py-3">View Details</Button></Link>
                         </div>
                     </div>
                 </div>

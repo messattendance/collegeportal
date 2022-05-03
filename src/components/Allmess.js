@@ -22,15 +22,7 @@ const Allmess = () => {
                     </thead>
                     <tbody>
                         <tr>
-                        <td>DH1</td>
-                        <td><Link to="/attendance"><Button variant="info">view attendance</Button></Link></td>
-                        </tr>
-                        <tr>
-                        <td>DH2</td>
-                        <td><Link to="/attendance"><Button variant="info">view attendance</Button></Link></td>
-                        </tr>
-                        <tr>
-                        <td>DH3</td>
+                        <td>DH8</td>
                         <td><Link to="/attendance"><Button variant="info">view attendance</Button></Link></td>
                         </tr>
                     </tbody>
