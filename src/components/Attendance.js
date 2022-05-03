@@ -72,7 +72,7 @@ const Attendance = () => {
 
   return (
     <div>
-        <Nav/>
+       
         <Container>
             <div className='align'>
                 <Button variant="info" className="py-3 my-3">Calendar</Button>
