@@ -1,7 +1,7 @@
 import React , {useEffect,useState} from 'react'
 import Nav from './Nav'
 import {Button, Container,Table} from 'react-bootstrap'
-
+import '../assets/css/index.css';
 import firebase from 'firebase';
 
 
@@ -28,7 +28,7 @@ const Feedback = () => {
        
         <Container>
         <div className="align">
-          <Button variant='info' className='py-3 my-3'>Feedback</Button>
+        <p className='xyz'><b>Feedback</b></p>
             <div className="feedback">
               <h5 className='px-3'>Satisfactory</h5>
               <h5 className='px-3'>Below Satisfactory</h5>
