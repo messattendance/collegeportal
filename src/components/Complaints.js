@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from 'react'
 import Nav from './Nav'
 import { Button, Container,Table } from 'react-bootstrap'
+import '../assets/css/index.css';
 import firebase from 'firebase'
 const Complaints = () => {
     const [count, setCount] = useState('');
@@ -34,7 +35,7 @@ const Complaints = () => {
         
         <Container>
         <div className='align'>
-        <Button variant='info' className='py-3 my-3'>Complaints</Button>
+        <p className='xyz'><b>Complaints</b></p>
         <div className='attendance'>
             <h5>Total Complaints : <span className='decor'>{count}</span></h5>
         </div>

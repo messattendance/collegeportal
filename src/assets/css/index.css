@@ -9,6 +9,14 @@
     width: 100px;
     background-color: #ffffff;
 }
+.xyz{
+    background-color: #301551;
+    color : #ffffff;
+    padding:5px 15px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
 
 .align , .menubtn {
     margin-top: 40px;

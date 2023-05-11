@@ -75,7 +75,7 @@ const Attendance = () => {
        
         <Container>
             <div className='align'>
-                <Button variant="info" className="py-3 my-3">Calendar</Button>
+                <p className='xyz'><b>Calendar</b></p>
                 <h5>Date : {todays}</h5>
                 <p>DH- 07 total count :<span className='decor'>920</span></p>
                 <Form>
